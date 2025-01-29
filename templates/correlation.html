@@ -8,8 +8,10 @@
     <div class="container my-5">
         <h1 class="text-center text-primary">Stock Correlation Heatmap</h1>
         <div class="mt-4">
+            <!-- Render plotly correlation matrix -->
             {{ heatmap | safe }}
         </div>
+        <!-- Return to Main Page -->
         <div class="mt-3">
             <a href="{{ url_for('index') }}" class="btn btn-secondary">Back</a>
         </div>
