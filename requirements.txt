@@ -1,0 +1,7 @@
+pandas==1.4.4
+numpy>=1.21.0
+matplotlib
+seaborn
+flask 
+yfinance
+plotly

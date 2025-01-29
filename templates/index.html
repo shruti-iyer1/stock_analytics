@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Stock Analytics Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container my-5">
+        <h1 class="text-center text-primary">Stock Analytics Dashboard</h1>
+
+        <form method="POST">
+            <label>Enter Stock Tickers (comma-separated):</label>
+            <input type="text" name="tickers" class="form-control" placeholder="e.g., AAPL, GOOGL, MSFT">
+
+            <label>Enter Weights (comma-separated, must sum to 1):</label>
+            <input type="text" name="weights" class="form-control" placeholder="e.g., 0.4, 0.3, 0.3">
+
+            <label>Start Date:</label>
+            <input type="date" name="start_date" class="form-control" value="{{ start_date }}">
+
+            <label>End Date:</label>
+            <input type="date" name="end_date" class="form-control" value="{{ end_date }}">
+
+            <button type="submit" class="btn btn-primary mt-3">Analyze</button>
+        </form>
+
+        {% if stock_chart %}
+            <div class="mt-5">
+                {{ stock_chart | safe }}
+            </div>
+            <div class="mt-3">
+                <a href="{{ url_for('portfolio_summary', tickers=tickers, start_date=start_date, end_date=end_date) }}" class="btn btn-info">View Portfolio Summary</a>
+                <a href="{{ url_for('correlation', tickers=tickers, start_date=start_date, end_date=end_date) }}" class="btn btn-warning">View Correlation Heatmap</a>
+                <a href="{{ url_for('portfolio_returns', tickers=tickers, weights=weights, start_date=start_date, end_date=end_date) }}" class="btn btn-success">View Portfolio Returns</a>
+            </div>            
+        {% endif %}
+    </div>
+</body>
+</html>
