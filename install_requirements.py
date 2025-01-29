@@ -16,6 +16,7 @@ def install_requirements(requirements_file):
         print(f"Error occurred while installing requirements: {e}")
         sys.exit(1)
 
-# Example usage
-requirements_file = "requirements.txt"  # Path to your requirements file
-install_requirements(requirements_file)
+if __name__ == "__main__":
+    # Example usage
+    requirements_file = "requirements.txt"  # Path to your requirements file
+    install_requirements(requirements_file)
