@@ -41,10 +41,10 @@ How This Helps Clients:
 
 ## Demo
 
-![Alt Text](images/snapshot_1.JPG)
+![Alt Text](images//snapshot_1.jpg)
 
-![Alt Text](images/snapshot_2.JPG)
+![Alt Text](images//snapshot_2.jpg)
 
-![Alt Text](images/snapshot_3.JPG)
+![Alt Text](images//snapshot_3.jpg)
 
 
